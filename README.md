@@ -28,7 +28,7 @@ USAGE
     DBManager *mgr = [[DBManager alloc] init];
     [mgr asyncUpdateTable:@"BOOKS" withContent:arr];
 
-´´´
+```
 
 3. Make your queries.
 
