@@ -22,7 +22,7 @@ USAGE
 
 2. Insert into your tables.
 
-´´´c
+```c
 
     NSArray *data = @[@{@"name":@"El principito", @"name":@"Antoine de Saint-Exupéry"}];
     DBManager *mgr = [[DBManager alloc] init];
