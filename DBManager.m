@@ -33,7 +33,7 @@ static NSString *databasePath;
             docsDir = dirPaths[0];
             databasePath = [[NSString alloc]
                             initWithString: [docsDir stringByAppendingPathComponent:
-                                             @"letmiapp.db"]];
+                                             @"dbname.db"]];
         }
     }
     return self;
