@@ -36,6 +36,8 @@ USAGE
 
     DBManager *mgr = [[DBManager alloc] init];
     [mgr asyncGetDataFromTable:@"BOOKS" withFilter:@" WHILE author like '%Saint%' " andCallback:^(NSArray *rows) {
+        // the content of rows are NSDictianary instances.
+        NSLog(@" name: %@",[[rows objectAtIndex:0] objectForKey:@"name"]);
         [self updateBooks:rows];
     }];
 
@@ -46,6 +48,8 @@ Or
 
     DBManager *mgr = [[DBManager alloc] init];
     [mgr asyncExecuteQuery:@"SELECT name from BOOKS where id='1' " withCallback:^(NSArray *rows) {
+        // the content of rows are NSDictianary instances.
+        NSLog(@" name: %@",[[rows objectAtIndex:0] objectForKey:@"name"]);
          [self updateBooks:rows];
     }]
 
