@@ -6,7 +6,7 @@ Simple IOS SQLite3 queued execution helper
 USAGE
 =====
 
-1. Create your tables.
+* Create your tables.
 
 ```c
     
@@ -22,7 +22,7 @@ USAGE
  
 ```
 
-2. Insert into your tables.
+* Insert into your tables.
 
 ```c
 
@@ -32,7 +32,7 @@ USAGE
 
 ```
 
-3. Make your queries.
+* Make your queries.
 
 ```c
 
