@@ -17,7 +17,9 @@ USAGE
                          [DBManager createColumn:@"author" withType:@"VARCHAR(100)" andRestrictions:@""]
                          ];
     [DBManager addTable:[DBManager createTable:@"BOOKS" withColumns:columns]];
-    
+    [mgr createTables];
+    [DBManager startDispatch];
+ 
 ```
 
 2. Insert into your tables.
