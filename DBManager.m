@@ -9,7 +9,6 @@
 #import "DBManager.h"
 #import <sqlite3.h>
 #import "NSMutableArray+NSMutableArray_QueueAdditions.h"
-#import "GeoHelper.h"
 #import <MapKit/MapKit.h>
 
 
@@ -200,7 +199,11 @@ static NSString *databasePath;
                                 } else {
                                     first = NO;
                                 }
-                                [colvalues appendFormat:@"'%@'", [ [NSString stringWithFormat:@"%@",[fila objectForKey:[col objectForKey:@"name"]]] stringByReplacingOccurrencesOfString: @"'" withString:@"''" ]  ];
+                                if ([fila objectForKey:[col objectForKey:@"name"]]!=nil)  {
+                                    [colvalues appendFormat:@"'%@'", [ [NSString stringWithFormat:@"%@",[fila objectForKey:[col objectForKey:@"name"]]] stringByReplacingOccurrencesOfString: @"'" withString:@"''" ]  ];
+                                } else {
+                                    [colvalues appendString:@"null"];
+                                }
                             }
                             ins_upd = [NSString stringWithFormat:@"INSERT INTO %@(%@) VALUES(%@)", table, colnames, colvalues];
                             // NSLog(@"%@",ins_upd);
